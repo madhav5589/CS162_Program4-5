@@ -12,7 +12,7 @@ const int PIZZA_DESCR_SIZE = 50;
 const int ITEMSTOADD_SIZE = 20;
 const int ITEMSTOREMOVE_SIZE = 20;
 
-class pizza_list
+class pizza
 { 
     public:       
       pizza();   //constructor - initialize the data members

@@ -1,16 +1,4 @@
-// .h file have the following components.
-// #includes
-// constants 
-// structures  
-// class interfaces 
-// prototypes
-
-
-#include <iostream>
-#include <cctype>
-#include <cstring>
-using namespace std;
-
+#include "pizza.h"
 
 // Darshita Patel
 // This codde is going to manage how to manage Pizza list and provide them to customers
@@ -31,7 +19,7 @@ class pizza_list
       // void read_pizza_name_for_search(char search_name[]);
     
     private:
-      Pizza *array;
+      pizza *array;
 	  int size_of_array;
 	  int num_of_pizzas;
 };

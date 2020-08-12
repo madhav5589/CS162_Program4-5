@@ -1,7 +1,15 @@
 #include "pizza_list.h"
 
+pizza_list() {
+    
+}
+
+~pizza_list() {
+    
+}
+
 // a function to display the list of available pizza
-void display_list_of_pizzas(pizzaMenu pizza[], int no_of_pizza)
+void pizza_list::display_list_of_pizzas(pizzaMenu pizza[], int no_of_pizza)
 {
     cout << no_of_pizza << " Pizzas available." << endl;
     cout << "Name\tDescription\tItemsToAdd\tItemsToRemove\tRating\n";
@@ -13,7 +21,7 @@ void display_list_of_pizzas(pizzaMenu pizza[], int no_of_pizza)
 }
 
 // a function to search the pizza from available pizzas
-void search_pizza_by_rating(char name[], pizzaMenu pizza[], int no_of_pizza)
+void pizza_list::search_pizza_by_rating(char name[], pizzaMenu pizza[], int no_of_pizza)
 {
     bool found = false;
     cout << "Search pizza name is: " << name << endl;
