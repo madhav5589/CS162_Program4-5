@@ -15,11 +15,12 @@ class pizza_list
 	  
 	  void display_list_of_pizzas(pizzaMenu pizza[], int no_of_pizza); // display all pizzas
 	  void search_pizza_by_rating(char name[], pizzaMenu pizza[], int no_of_pizza); // search and display pizzas by rating
+	  void add_new_pizza(pizzaMenu pizza[], int &no_of_pizza); // method to add new pizza      
 	  
       // void read_pizza_name_for_search(char search_name[]);
     
     private:
-      pizza *array;
+      pizza *pizzaArray;
 	  int size_of_array;
 	  int num_of_pizzas;
 };

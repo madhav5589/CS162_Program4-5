@@ -21,7 +21,6 @@ class pizza
 	  void display_options(); // display available options to the user
       int read_user_choice(); // read in user's choice
 	  
-      void add_new_pizza(pizzaMenu pizza[], int &no_of_pizza); // method to add new pizza      
       void read_pizza_name_for_search(char search_name[]);
       void search_pizza(char name[], pizzaMenu pizza[], int no_of_pizza);
       

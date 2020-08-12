@@ -20,6 +20,35 @@ void pizza_list::display_list_of_pizzas(pizzaMenu pizza[], int no_of_pizza)
     }
 }
 
+
+// a function to add new pizaa to menu
+void pizza::add_new_pizza(pizzaMenu pizza[], int &no_of_pizza) {
+    int i = no_of_pizza;
+    cout << "Enter the name of the pizaa: ";
+    cin.get(pizza[i].name, 30);
+    cin.ignore(100, '\n');
+    
+    cout << "Enter the description of the pizaa: ";
+    cin.get(pizza[i].description, 50);
+    cin.ignore(100, '\n');
+    
+    cout << "Enter the items to add on the pizaa: ";
+    cin.get(pizza[i].itemsToAdd, 20);
+    cin.ignore(100, '\n');
+    
+    cout << "Enter the items to remove from the pizaa: ";
+    cin.get(pizza[i].itemsToRemove, 20);
+    cin.ignore(100, '\n');
+    
+    cout << "Enter the rating of the pizaa: ";
+    cin >> pizza[i].rating;
+    cin.ignore(100, '\n');
+    
+    no_of_pizza++;
+    cout << "Pizza added successfully." << endl;
+}
+
+
 // a function to search the pizza from available pizzas
 void pizza_list::search_pizza_by_rating(char name[], pizzaMenu pizza[], int no_of_pizza)
 {
