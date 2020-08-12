@@ -20,9 +20,12 @@ class pizza
 	  
 	  void display_options(); // display available options to the user
       int read_user_choice(); // read in user's choice
+      void read();
+      void display(); // display the pizza 
+      void display_search_by_rating(int inputrating); // display the search results by rating
 	  
       void read_pizza_name_for_search(char search_name[]);
-      void search_pizza(char name[], pizzaMenu pizza[], int no_of_pizza);
+      // void search_pizza(char name[], pizzaMenu pizza[], int no_of_pizza);
       
 	  void show_quit_message();
     
@@ -33,6 +36,4 @@ class pizza
       char itemsToRemove[ITEMSTOREMOVE_SIZE];
       int rating; // between 0 and 5
 };
-
-
 

@@ -1,70 +1,56 @@
 #include "pizza_list.h"
 
-pizza_list() {
-    
+pizza_list::pizza_list() {
+    size_of_array = 20;
+    pizzaArray = new pizza[size_of_array];
 }
 
-~pizza_list() {
+pizza_list::~pizza_list() {
+    if(pizzaArray != NULL)
+    {
+        delete[] pizzaArray;
+    }
+    pizzaArray = 0;
     
+    num_of_pizzas = 0;
+    size_of_array = 0;
 }
 
 // a function to display the list of available pizza
-void pizza_list::display_list_of_pizzas(pizzaMenu pizza[], int no_of_pizza)
+void pizza_list::display_list_of_pizzas()
 {
-    cout << no_of_pizza << " Pizzas available." << endl;
-    cout << "Name\tDescription\tItemsToAdd\tItemsToRemove\tRating\n";
-    
-    for(int i = 0; i< no_of_pizza; i++) {
-        cout << pizza[i].name << "\t" << pizza[i].description << "\t" << pizza[i].itemsToAdd << "\t" <<
-            pizza[i].itemsToRemove << "\t" << pizza[i].rating <<  endl;
-    }
+ cout << num_of_pizzas << " Pizzas available." << endl;
+ cout << "Name\tDescription\tItemsToAdd\tItemsToRemove\tRating\n";
+ for(int i = 0; i< num_of_pizzas; i++) {
+     pizzaArray[i].display();
+ }
 }
 
 
 // a function to add new pizaa to menu
-void pizza::add_new_pizza(pizzaMenu pizza[], int &no_of_pizza) {
-    int i = no_of_pizza;
-    cout << "Enter the name of the pizaa: ";
-    cin.get(pizza[i].name, 30);
-    cin.ignore(100, '\n');
-    
-    cout << "Enter the description of the pizaa: ";
-    cin.get(pizza[i].description, 50);
-    cin.ignore(100, '\n');
-    
-    cout << "Enter the items to add on the pizaa: ";
-    cin.get(pizza[i].itemsToAdd, 20);
-    cin.ignore(100, '\n');
-    
-    cout << "Enter the items to remove from the pizaa: ";
-    cin.get(pizza[i].itemsToRemove, 20);
-    cin.ignore(100, '\n');
-    
-    cout << "Enter the rating of the pizaa: ";
-    cin >> pizza[i].rating;
-    cin.ignore(100, '\n');
-    
-    no_of_pizza++;
-    cout << "Pizza added successfully." << endl;
+void pizza_list::add_new_pizza() {
+ // int i = num_of_pizzas;
+ pizzaArray[num_of_pizzas].read();
+ num_of_pizzas++;
+ size_of_array++;
 }
 
 
 // a function to search the pizza from available pizzas
-void pizza_list::search_pizza_by_rating(char name[], pizzaMenu pizza[], int no_of_pizza)
+void pizza_list::search_pizza_by_rating()
 {
-    bool found = false;
-    cout << "Search pizza name is: " << name << endl;
-    for(int i=0; i<no_of_pizza; i++) 
-    {
-        if(strcmp(pizza[i].name, name) == 0) 
-        {
-            cout << "Here is the Pizza we found: " << endl;
-            display_list_of_pizzas(pizza, 1);
-            found = true;
-        }
-    }
-    if(found == false) {
-        cout << "No pizza found matching entered name." << endl;
-    }
-    
+     int inputrating;
+     cout<< "Enter the rating to search the pizza: ";
+     cin >> inputrating;
+     cin.ignore(100, '\n');
+ 
+ for(int i=0; i<num_of_pizzas; i++) 
+ { 
+    pizzaArray[i].display_search_by_rating(inputrating);
+ }
+}
+
+void pizza_list::display_most_recent_pizza()
+{
+    pizzaArray[num_of_pizzas-1].display();
 }
