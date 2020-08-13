@@ -1,5 +1,8 @@
 #include "pizza_list.h"
 
+// Darshita Patel
+// The purpose of this function is to manage the list of pizzas class and various functions to manage the list of pizza and display it to the user
+
 pizza_list::pizza_list() {
     size_of_array = 20;
     pizzaArray = new pizza[size_of_array];
@@ -14,6 +17,16 @@ pizza_list::~pizza_list() {
     
     num_of_pizzas = 0;
     size_of_array = 0;
+}
+
+// a function to insert pizza in linkedlist by name
+void pizza_list::display_pizza_by_name() {
+    for(int i = 0; i< num_of_pizzas; i++) {
+     pizzaArray[i].insert_into_LL();
+    }
+    
+    pizzaArray[0].display_linkedlist();
+    
 }
 
 // a function to display the list of available pizza
@@ -54,3 +67,6 @@ void pizza_list::display_most_recent_pizza()
 {
     pizzaArray[num_of_pizzas-1].display();
 }
+
+
+
